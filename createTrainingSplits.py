@@ -58,8 +58,9 @@ def generate_folds():
     for f in range(0, 5):
         ts = np.concatenate((blocks_g1[f], blocks_g2[f]), axis=0)
 
+        block_list = list(range(0, 5))
+
         if f in block_list:
-            block_list = list(range(0, 5))
             block_list.remove(f)
         else:
             raise Exception("Fold number is out of the range of block list.")
