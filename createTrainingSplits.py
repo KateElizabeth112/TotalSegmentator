@@ -25,7 +25,7 @@ def generate_folds():
     info = pkl.load(f)
     f.close()
 
-    patients = info["patients"]
+    patients = info["id"]
     age = info["age"]
     sex = info["sex"]
 
