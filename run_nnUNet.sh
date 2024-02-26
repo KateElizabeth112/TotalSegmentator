@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -l walltime=48:00:00
 #PBS -l select=1:ncpus=18:mem=100gb:ngpus=1:gpu_type=RTX6000
-#PBS -N nnUNet_TS_age_902
+#PBS -N nnUNet_TS_sex_000
 
 cd ${PBS_O_WORKDIR}
 
