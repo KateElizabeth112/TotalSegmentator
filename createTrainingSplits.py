@@ -42,8 +42,8 @@ def generate_folds():
     dataset_size = int(block_size * (n_blocks - 1))
 
     print("Total dataset size: {}".format(patients.shape))
-    print("Number of males: {}")
-    print("Number of females: {}")
+    print("Number of males: {}".format(ids_g1.shape[0]))
+    print("Number of females: {}".format(ids_g2.shape[0]))
     print("Dataset size: {}".format(dataset_size))
     print("Test set size per fold: {}".format(block_size * 2))
 
