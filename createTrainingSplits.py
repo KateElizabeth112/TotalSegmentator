@@ -41,6 +41,9 @@ def generate_folds():
     block_size = np.floor(np.min([ids_g1.shape[0], ids_g2.shape[0]]) / n_blocks)
     dataset_size = int(block_size * (n_blocks - 1))
 
+    print("Total dataset size: {}".format(patients.shape))
+    print("Number of males: {}")
+    print("Number of females: {}")
     print("Dataset size: {}".format(dataset_size))
     print("Test set size per fold: {}".format(block_size * 2))
 
@@ -80,9 +83,9 @@ def generate_folds():
         set_2_ids = {"train": tr2, "test": ts}
 
         # save the IDs for the fold
-        f = open(os.path.join(splits_folder, "fold_{}_sex.pkl".format(f)), "wb")
-        pkl.dump([set_1_ids, set_2_ids], f)
-        f.close()
+        #f = open(os.path.join(splits_folder, "fold_{}_sex.pkl".format(f)), "wb")
+        #pkl.dump([set_1_ids, set_2_ids], f)
+        #f.close()
 
 
 def copy_images(dataset_name, ids_tr, ids_ts):
@@ -124,7 +127,7 @@ def copy_images(dataset_name, ids_tr, ids_ts):
 
 def main():
     generate_folds()
-
+    """
     # Sort the case IDs according to the sets
     folds = [0, 1, 2, 3, 4]
 
@@ -141,7 +144,7 @@ def main():
 
             print("Working on Set {}....".format(name))
             copy_images(name, ids_tr, ids_ts)
-
+    """
 
 
 if __name__ == "__main__":
